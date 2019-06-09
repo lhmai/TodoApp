@@ -9,6 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><?php echo $title; ?></title>
+    <!-- Datatables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -87,7 +89,8 @@ session_start();
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
                         <?php if (isset($_SESSION['users'])) {
-                            echo '<div class="white-text"> Xin chào : ' . $_SESSION['users']['fullname'] . '</div><a href="logout.php"><button type="button" class="btn-floating btn-danger btn-sm"><i class="fa fa-sign-out-alt"></i></button></a>';
+                            echo '<div class="white-text"> Xin chào : ' . $_SESSION['users']['fullname'] . '</div><a href="logout.php"><button type="button" class="btn-floating btn-danger btn-sm"><i class="fa fa-sign-out-alt"></i></button></a>
+                            <a href="profile.php"><button type="button" class="btn-floating btn-success btn-sm"><i class="fa fa-user"></i></button></a>';
                         } else {
                             echo '<a href="#" class="nav-link" data-toggle="modal" data-target="#modalSocial"><i class="fas fa-user-circle"></i> Đăng Nhập </a>';
                         } ?>

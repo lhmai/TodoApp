@@ -16,6 +16,7 @@ class Database {
         $this->conn = new mysqli($this->host,$this->user,$this->pass,$this->database)
         or die('Kết nối tới CSDL thất bại kiểm tra lại cấu hình class Database');
         $this->conn->query('SET NAMES UTF8');
+        // mysqli_query('SET NAMES UTF8');
     }
 
     // Phương thức Select dữ liệu 
@@ -23,6 +24,7 @@ class Database {
     public function Select($sql){
         $this->connect();
         $this->result = $this->conn->query($sql);
+        // $result = mysqli_query($sql);
     }
 
     // Phương thức đếm bản ghi 
@@ -46,4 +48,6 @@ class Database {
         $this->connect();
         $this->conn->query($sql);
     }
+    // $sql = "Insert into table (id) values ('ID01');
+    // $object->Run($sql);
 }

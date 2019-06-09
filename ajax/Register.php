@@ -1,6 +1,8 @@
 <?php 
 
 include '../class/database.php';
+if (!isset($_SESSION['users']))
+    header("Location: ../index.php");
 
 if($_POST){
     $username = $_POST['txtUser'];
@@ -11,6 +13,7 @@ if($_POST){
 
     $dt = new Database;
     $dt->Select("SELECT * from users where username = '{$username}'");
+    
     $count = $dt->dbCount();
     if($count > 0){
         die('ErrorUserAlready');

@@ -1,6 +1,8 @@
 <?php 
 session_start();
 include '../class/database.php';
+if (!isset($_SESSION['users']))
+    header("Location: ../index.php");
 
 if($_POST){
     $username = $_POST['logUser'];
