@@ -6,7 +6,7 @@ class Database {
     private $conn = null;
     private $host = 'localhost';
     private $user = 'root';
-    private $pass = 'hieudaica';
+    private $pass = 'rogteam';
     private $database = 'todo_app';
     private $result = '';
 
