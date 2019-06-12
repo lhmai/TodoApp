@@ -1,7 +1,7 @@
 <?php 
 
 include '../class/database.php';
-if (!isset($_SESSION['users']))
+if (isset($_SESSION['users']))
     header("Location: ../index.php");
 
 if($_POST){

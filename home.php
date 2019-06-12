@@ -39,7 +39,7 @@ $object->Select($sql);
                                     <a class="nav-link" id="dalam-task" data-toggle="tab" href="#done" role="tab" aria-controls="done" aria-selected="false">Đã hoàn thành</a>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="btn btn-success btn-sm" id="btnAddNew" type="button">Thêm công việc</button>
+                                    <a href="addjob.php"><button class="btn btn-success btn-sm" id="btnAddNew" type="button">Thêm công việc</button></a>
                                 </li>
                             </ul>
                             <div class="tab-content black-text" id="myTabContent">
@@ -49,9 +49,9 @@ $object->Select($sql);
                                             <tr>
                                                 <th>Tên Công Việc</th>
                                                 <th>Mô tả</th>
-                                                <th>Chú thích</th>
                                                 <th>Loại công việc</th>
                                                 <th>Thời gian tạo</th>
+                                                <th>Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -66,9 +66,9 @@ $object->Select($sql);
                                             <tr>
                                                 <th>Tên Công Việc</th>
                                                 <th>Mô tả</th>
-                                                <th>Chú thích</th>
                                                 <th>Loại công việc</th>
                                                 <th>Thời gian tạo</th>
+                                                <th>Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -83,9 +83,9 @@ $object->Select($sql);
                                             <tr>
                                                 <th>Tên Công Việc</th>
                                                 <th>Mô tả</th>
-                                                <th>Chú thích</th>
                                                 <th>Loại công việc</th>
                                                 <th>Thời gian tạo</th>
+                                                <th>Thao tác</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -147,9 +147,6 @@ $object->Select($sql);
                     data: 'mota'
                 },
                 {
-                    data: 'chuthich'
-                },
-                {
                     data: 'loaicongviec',
                     render: function(data, type, row, meta) {
                         let stringReturn = "";
@@ -162,6 +159,12 @@ $object->Select($sql);
                 },
                 {
                     data: 'thoigiantao'
+                }, {
+                    data: 'id',
+                    render: function(data) {
+                        let stringReturn = '<a href="edit.php?id=' + data + '"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button></a><a href="delete.php?id=' + data + '"><button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button></a>';
+                        return stringReturn;
+                    }
                 }
             ]
         });
@@ -193,9 +196,6 @@ $object->Select($sql);
                     data: 'mota'
                 },
                 {
-                    data: 'chuthich'
-                },
-                {
                     data: 'loaicongviec',
                     render: function(data, type, row, meta) {
                         let stringReturn = "";
@@ -208,6 +208,12 @@ $object->Select($sql);
                 },
                 {
                     data: 'thoigiantao'
+                }, {
+                    data: 'id',
+                    render: function(data) {
+                        let stringReturn = '<a href="edit.php?id=' + data + '"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button></a><a href="delete.php?id=' + data + '"><button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button></a>';
+                        return stringReturn;
+                    }
                 }
             ]
         });
@@ -239,9 +245,6 @@ $object->Select($sql);
                     data: 'mota'
                 },
                 {
-                    data: 'chuthich'
-                },
-                {
                     data: 'loaicongviec',
                     render: function(data, type, row, meta) {
                         let stringReturn = "";
@@ -254,15 +257,15 @@ $object->Select($sql);
                 },
                 {
                     data: 'thoigiantao'
+                }, {
+                    data: 'id',
+                    render: function(data) {
+                        let stringReturn = '<a href="edit.php?id=' + data + '"><button type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></button></a><a href="delete.php?id=' + data + '"><button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button></a>';
+                        return stringReturn;
+                    }
                 }
             ]
         });
 
-    });
-
-    $('#btnAddNew').click(function() {
-        $('#TabTo').DataTable().ajax.reload();
-        $('#TabDo').DataTable().ajax.reload();
-        $('#TabDone').DataTable().ajax.reload();
     });
 </script>
