@@ -1,5 +1,5 @@
 <?php
-include '../env.php';
+require($_SERVER['DOCUMENT_ROOT']. '/TodoApp/env.php');
 class Database {
     // Khai báo thuộc tính
 

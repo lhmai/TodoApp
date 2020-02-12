@@ -1,7 +1,6 @@
 <?php
 $title = "Ứng dụng quản lý công việc cá nhân";
 include 'layouts/header.php';
-include 'autoload.php';
 include 'class/database.php';
 
 if(isset($_SESSION['users']))
