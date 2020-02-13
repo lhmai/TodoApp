@@ -10,7 +10,7 @@ set('application', 'todoapp');
 set('repository', 'git@github.com:lhmai/TodoApp.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true);
+set('git_tty', false);
 
 // Shared files/dirs between deploys
 set('shared_files', []);
