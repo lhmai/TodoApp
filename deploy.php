@@ -25,8 +25,8 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('34.87.70.54')
-    ->user('deploy')	
+host('35.198.254.158')
+    ->user('deploy')
     ->set('deploy_path', '~/{{application}}');
 
 
