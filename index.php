@@ -61,6 +61,8 @@ if(isset($_SESSION['users']))
                                     <i class="fas fa-user prefix grey-text"></i>
                                     <input type="text" id="txtUser" name="txtUser" class="form-control">
                                     <label for="txtUser">Tên đăng nhập</label>
+                                    <input type="text" id="txtUser" name="txtUser" class="form-control" maxlength="15">
+                                    <label for="txtUser">Tên đăng nhập (tối đa 15 ký tự)</label>
                                 </div>
                                 <div class="md-form">
                                     <i class="fas fa-grin-squint-tears prefix grey-text"></i>
